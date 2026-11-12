@@ -2,6 +2,7 @@ import Image from "next/image";
 import { forwardRef } from "react";
 import type { Project } from "@/content/site";
 import { BoltMark } from "./logo";
+import { asset } from "@/lib/asset";
 
 /** A project's screen recording (or a placeholder cover) in a slim browser frame. */
 export const ProjectFrame = forwardRef<HTMLVideoElement, { project: Project; sizes: string; priority?: boolean }>(
@@ -23,11 +24,11 @@ export const ProjectFrame = forwardRef<HTMLVideoElement, { project: Project; siz
         <div className="relative aspect-[16/11] overflow-hidden sm:aspect-[20/9]">
           {project.media ? (
             <>
-              <Image src={`/work/${project.media}.webp`} alt={`${project.name} landing page`} fill sizes={sizes} priority={priority} className="object-cover object-top" />
+              <Image src={asset(`/work/${project.media}.webp`)} alt={`${project.name} landing page`} fill sizes={sizes} priority={priority} className="object-cover object-top" />
               <video
                 ref={videoRef}
-                src={`/work/${project.media}.mp4`}
-                poster={`/work/${project.media}.webp`}
+                src={asset(`/work/${project.media}.mp4`)}
+                poster={asset(`/work/${project.media}.webp`)}
                 muted
                 loop
                 playsInline
@@ -37,7 +38,7 @@ export const ProjectFrame = forwardRef<HTMLVideoElement, { project: Project; siz
               />
             </>
           ) : project.cover ? (
-            <Image src={project.cover} alt={`${project.name} cover`} fill sizes={sizes} className="object-cover" />
+            <Image src={asset(project.cover)} alt={`${project.name} cover`} fill sizes={sizes} className="object-cover" />
           ) : (
             <div
               className="absolute inset-0 flex flex-col justify-end p-[6%]"

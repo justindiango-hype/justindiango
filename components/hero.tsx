@@ -8,6 +8,7 @@ import { hero, site } from "@/content/site";
 import { DubaiTime } from "./dubai-time";
 import { useIntro } from "./preloader";
 import { RichText } from "./rich-text";
+import { asset } from "@/lib/asset";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,7 +100,7 @@ export function Hero() {
         className="pointer-events-none absolute left-1/2 top-[45svh] z-10 aspect-[765/1400] w-[min(112vw,560px)] -translate-x-1/2 md:left-[79%] md:top-[12svh] md:w-[min(108svh,56vw)]"
       >
         <Image
-          src={site.portrait}
+          src={asset(site.portrait)}
           alt={`Portrait of ${site.name}`}
           fill
           priority
@@ -112,7 +113,7 @@ export function Hero() {
       {/* Where the traveling 3D bolt starts (travel-bolt.tsx flies it from here). Static image if motion is reduced. */}
       <div data-bolt-slot="hero" aria-hidden="true" className="pointer-events-none absolute left-[68%] top-[24svh] z-20 aspect-square w-[clamp(96px,26vw,200px)] md:left-[45%] md:top-[50svh] md:w-[clamp(120px,12vw,220px)]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/bolt-hero.webp" alt="" className="hidden h-full w-full object-contain motion-reduce:block" />
+        <img src={asset("/brand/bolt-hero.webp")} alt="" className="hidden h-full w-full object-contain motion-reduce:block" />
       </div>
 
       {/* UI */}

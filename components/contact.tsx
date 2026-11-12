@@ -7,6 +7,7 @@ import { contact, site } from "@/content/site";
 import { DubaiTime } from "./dubai-time";
 import { Electric } from "./electric";
 import { Logo } from "./logo";
+import { asset } from "@/lib/asset";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,7 +116,7 @@ export function Contact() {
           {/* Where the traveling bolt settles after the BOOM */}
           <div data-bolt-slot="cta" aria-hidden="true" className="pointer-events-none absolute right-[4%] top-[-6%] aspect-square w-[clamp(90px,min(13vw,26svh),230px)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/bolt-cta.webp" alt="" className="hidden h-full w-full object-contain motion-reduce:block" />
+            <img src={asset("/brand/bolt-cta.webp")} alt="" className="hidden h-full w-full object-contain motion-reduce:block" />
           </div>
         </div>
 

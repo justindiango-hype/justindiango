@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import type { Project } from "@/content/site";
 import { ProjectDetails } from "./project-frame";
+import { asset } from "@/lib/asset";
 
 /** Full-screen preview: the project's recording playing, with its details. Esc / backdrop / × to close. */
 export function ProjectModal({ project, onClose }: { project: Project | null; onClose: () => void }) {
@@ -24,7 +25,7 @@ export function ProjectModal({ project, onClose }: { project: Project | null; on
   }, [project, onClose]);
 
   if (!project) return null;
-  const cover = project.media ? `/work/${project.media}.webp` : project.cover;
+  const cover = asset(project.media ? `/work/${project.media}.webp` : project.cover ?? "");
 
   return (
     <div
@@ -54,7 +55,7 @@ export function ProjectModal({ project, onClose }: { project: Project | null; on
           <div className="relative aspect-[20/9] max-h-[70svh] w-full">
             {project.media ? (
               <video
-                src={`/work/${project.media}.mp4`}
+                src={asset(`/work/${project.media}.mp4`)}
                 poster={cover}
                 autoPlay
                 muted
