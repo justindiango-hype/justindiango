@@ -111,7 +111,7 @@ export function Hero() {
       </div>
 
       {/* Where the traveling 3D bolt starts (travel-bolt.tsx flies it from here). Static image if motion is reduced. */}
-      <div data-bolt-slot="hero" aria-hidden="true" className="pointer-events-none absolute left-[68%] top-[24svh] z-20 aspect-square w-[clamp(96px,26vw,200px)] md:left-[45%] md:top-[50svh] md:w-[clamp(120px,12vw,220px)]">
+      <div data-bolt-slot="hero" aria-hidden="true" className="pointer-events-none absolute left-[71%] top-[39svh] z-20 aspect-square w-[clamp(72px,21vw,200px)] md:left-[45%] md:top-[50svh] md:w-[clamp(120px,12vw,220px)]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={asset("/brand/bolt-hero.webp")} alt="" className="hidden h-full w-full object-contain motion-reduce:block" />
       </div>

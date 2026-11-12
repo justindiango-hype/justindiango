@@ -177,7 +177,7 @@ export function SideStage() {
               />
               <WorkPanel onOpen={setOpen} bg={false} className="absolute inset-0" />
               {/* Where the traveling bolt leads the work in from the right */}
-              <div data-bolt-slot="lead" aria-hidden="true" className="pointer-events-none absolute left-[-14vw] top-[30%] aspect-square w-[clamp(110px,14vw,240px)]" />
+              <div data-bolt-slot="lead" aria-hidden="true" className="pointer-events-none absolute left-[-28vw] top-[24%] aspect-square w-[22vw] md:left-[-14vw] md:top-[30%] md:w-[clamp(110px,14vw,240px)]" />
             </div>
           </>
         ) : (

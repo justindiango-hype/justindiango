@@ -84,7 +84,7 @@ export function Contact() {
   const words = contact.title.split(" ");
 
   return (
-    <section id="contact" ref={root} aria-label="Contact" className="relative isolate z-[2] flex flex-col overflow-hidden bg-midnight pt-20 sm:pt-24 motion-safe:-mt-[100svh] motion-safe:min-h-[100svh]">
+    <section id="contact" ref={root} aria-label="Contact" className="relative isolate z-[2] flex flex-col overflow-hidden bg-midnight pt-[calc(env(safe-area-inset-top)+6.5rem)] sm:pt-24 motion-safe:-mt-[100svh] motion-safe:min-h-[100svh]">
       {/* Ocean flood (revealed from the strike point) */}
       <div data-flood aria-hidden="true" className="absolute inset-0 -z-10" style={{ background: "linear-gradient(180deg, #01047B 0%, #0F7FC4 38%, #01047B 100%)" }} />
 
